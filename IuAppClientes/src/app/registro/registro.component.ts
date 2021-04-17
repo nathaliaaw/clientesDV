@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { ServicioGeneralService } from '../servicios/servicio-general.service';
 
 
 
@@ -18,9 +19,10 @@ export class RegistroComponent implements OnInit {
   completosNombre: string = ''
   usuario: string = ''
   clave: string = ''
-  listaTipoIdentificacion: any = []
-  constructor(private http: HttpClient) {
-    this.cargarTipoIdentificacion()
+
+  constructor(private http: HttpClient,
+    public servicioGeneral: ServicioGeneralService) {
+    
   }
 
 
@@ -33,17 +35,7 @@ export class RegistroComponent implements OnInit {
       clave: new FormControl('', [Validators.required]),
     });
   }
-  cargarTipoIdentificacion() {
-    this.http.get(environment.urlApi + '/tiposIdentificacion').subscribe(
-      (data: Array<any>) => {
-
-        this.listaTipoIdentificacion = data
-        // this.datosfechaNoG = data;
-        console.log(data);
-      }, error => {
-        console.log(error);
-      });
-  }
+ 
   regsitrarUsuario() {
     if (this.formRegistro.invalid) 
     return;
