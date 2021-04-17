@@ -46,7 +46,6 @@ export class CrearClientesComponent implements OnInit {
 
 
     if (this.servicioGeneral.listaActualizar==[]){
-      debugger
       const info2 = {
         idProducto: this.idProducto, tipodocumento: this.tipodocumento
         , numeroDocumento: this.numeroDocumento, completosNombre: this.completosNombre
@@ -60,8 +59,7 @@ export class CrearClientesComponent implements OnInit {
           // this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
         });
     }
-    else{
-      debugger
+    else{      
       const info2 = {
         idProducto: this.idProducto, tipodocumento: this.tipodocumento
         , numeroDocumento: this.numeroDocumento, completosNombre: this.completosNombre,idusuario: this.servicioGeneral.listaActualizar.idusuario,
