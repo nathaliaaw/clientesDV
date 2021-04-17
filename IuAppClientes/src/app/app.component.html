@@ -1,34 +1,3 @@
 <router-outlet>
 </router-outlet>}
-<!-- <input type="text" placeholder="nombre" [(ngModel)]="txtNombre"> -->
-
-<!-- <select>
-  <option *ngFor="let item of datos">
-    {{item.DescripcionCita}}
-  </option> 
- </select> -->
- <br>
- Inicio: 
- <input type="date" name="fecha" [(ngModel)]="fecha1">
- Fin:
- <input type="date" name="fecha" [(ngModel)]="fecha2">
- <button (click)="clic()">clic aqui!</button>
- <!-- <ngbd-datepicker-popup></ngbd-datepicker-popup> -->
- <ul class="nav nav-tabs nav-justified">
-  <li class="nav-item">
-    <a class="nav-link" (click)="Gestion()" href="#">Gestionadas</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" (click)="NoGestion()" href="#">No Gestionadas</a>
-  </li>
-</ul>
-<div [hidden]="!Gestionadas">
-  <div *ngFor="let dfecha of datosfechaG">
-    {{dfecha.DescripcionCita}}
-  </div>
-</div>
-<div [hidden]="!NoGestionadas">
-  <div *ngFor="let dfecha of datosfechaNoG">
-    {{dfecha.DescripcionCita}}
-  </div>
-</div>
+ 
