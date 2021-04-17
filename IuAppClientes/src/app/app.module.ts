@@ -9,11 +9,12 @@ import { NgbdDatepickerPopup } from './datepicker-popup';
 import { ClienteComponent } from './cliente/cliente.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { CrearClientesComponent } from './crear-clientes/crear-clientes.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, NgbdDatepickerPopup, ClienteComponent, LoginComponent, RegistroComponent
+    AppComponent, NgbdDatepickerPopup, ClienteComponent, LoginComponent, RegistroComponent, CrearClientesComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,
