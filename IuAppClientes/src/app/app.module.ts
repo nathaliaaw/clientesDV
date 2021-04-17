@@ -6,11 +6,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbdDatepickerPopup } from './datepicker-popup';
+import { ClienteComponent } from './cliente/cliente.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, NgbdDatepickerPopup
+    AppComponent, NgbdDatepickerPopup, ClienteComponent, LoginComponent, RegistroComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,
