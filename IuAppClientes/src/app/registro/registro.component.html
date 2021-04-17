@@ -10,7 +10,7 @@
           <label for="">tipo documento</label>
           <select formControlName="tipodocumento" name="tipodocumento" id="" [(ngModel)]="tipodocumento" class="form-control">
             <option value="">Seleccione</option>
-            <option value="{{item.id}}" *ngFor="let item of listaTipoIdentificacion">{{item.descripcion}}</option>            
+            <option value="{{item.id}}" *ngFor="let item of servicioGeneral.listaTipoIdentificacion">{{item.descripcion}}</option>            
           </select>
         </div>
         <div>
@@ -30,7 +30,8 @@
           <input type="password" class="form-control" formControlName="clave" [(ngModel)]="clave" name="clave">
         </div>
         <div>
-          <button class="btn btn-default" (click)=regsitrarUsuario()>
+          
+          <button type="button" class="btn btn-success" (click)=regsitrarUsuario()>
             Registrar
           </button>
         </div>
