@@ -1,0 +1,31 @@
+
+<div class="container">
+    <button type="button" class="btn btn-primary" [routerLink]="['/crearClientes']" routerLinkActive="router-link-active" (click)="limpiarVariable()">
+        Crear cliente</button>
+    <h2>Lista de clientes</h2>
+    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nombre Completo</th>          
+          <th>Tipo identificacion</th>
+          <th>Identificacion</th>
+          <th>Producto</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaClientesD">
+          <td>{{item.nombres}}</td>          
+          <td>{{item.descripcion}}</td>
+          <td>{{item.numeroIdentificacion}}</td>
+          <td>{{item.producto}}</td>
+          
+          <td (click)="actualizarCliente(item)" [routerLink]="['/crearClientes']" routerLinkActive="router-link-active" > Editar cliente </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  
