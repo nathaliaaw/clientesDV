@@ -10,11 +10,12 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { CrearClientesComponent } from './crear-clientes/crear-clientes.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, NgbdDatepickerPopup, ClienteComponent, LoginComponent, RegistroComponent, CrearClientesComponent
+    AppComponent, NgbdDatepickerPopup, ClienteComponent, LoginComponent, RegistroComponent, CrearClientesComponent, ReportesComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,
