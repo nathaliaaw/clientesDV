@@ -1,0 +1,43 @@
+<div class="container ">
+  <div class="row">
+    <div class="offset-md-4 col-md-4 top">
+      <div>
+        <h3>Formulario de registro</h3>
+      </div>
+      <form action=""  [formGroup]="formRegistro">
+
+        <div>
+          <label for="">tipo documento</label>
+          <select formControlName="tipodocumento" name="tipodocumento" id="" [(ngModel)]="tipodocumento" class="form-control">
+            <option value="">Seleccione</option>
+            <option value="{{item.id}}" *ngFor="let item of listaTipoIdentificacion">{{item.descripcion}}</option>            
+          </select>
+        </div>
+        <div>
+          <label for="">Número documento</label>
+          <input formControlName="numeroDocumento" name="numeroDocumento" type="text" class="form-control">
+        </div>
+        <div>
+          <label for="">Nombres completos</label>
+          <input formControlName="completosNombre" name="completosNombre" type="text" class="form-control">
+        </div>
+        <div>
+          <label for="">Usuario</label>
+          <input formControlName="usuario" name="usuario" type="text" class="form-control">
+        </div>
+        <div>
+          <label for="">Contraseña</label>
+          <input type="password" class="form-control" formControlName="clave" [(ngModel)]="clave" name="clave">
+        </div>
+        <div>
+          <button class="btn btn-default" (click)=regsitrarUsuario()>
+            Registrar
+          </button>
+        </div>
+      </form>
+      <div>
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
