@@ -1,3 +1,44 @@
-<p>
-  crear-clientes works!
-</p>
+<div class="container ">
+  <div class="row">
+    <div class="offset-md-4 col-md-4 top">
+      <div>
+        <h3>Formulario de clientes</h3>
+      </div>
+      <form action=""  [formGroup]="formRegistroclientes">
+
+        <div>
+          <label >Tipo documento</label>
+          <select formControlName="tipodocumento" name="tipodocumento" id="" [(ngModel)]="tipodocumento" class="form-control">
+              <option value="">Seleccione</option>
+              <option value="{{item.id}}" *ngFor="let item of servicioGeneral.listaTipoIdentificacion">{{item.descripcion}}</option>            
+          </select>
+        </div>
+        <div>
+          <label >Número documento</label>
+          <input formControlName="numeroDocumento" name="numeroDocumento"  [(ngModel)]="numeroDocumento" type="text" class="form-control">
+        </div>
+        <div>
+          <label >Nombres completos</label>
+          <input formControlName="completosNombre" name="completosNombre"  [(ngModel)]="completosNombre"type="text" class="form-control">
+        </div>
+        <div>
+          <label >Productos</label>
+          <select formControlName="idProducto" name="idProducto" id="" [(ngModel)]="idProducto" class="form-control">
+              <option value="">Seleccione</option>
+              <option value="{{item.id}}" *ngFor="let item of listaProductos">{{item.descripcion}}</option>            
+          </select>
+        </div>
+        <div>
+          <br/>
+          <button type="button" class="btn btn-success" (click)="registrarProductos()">
+            Registrar
+          </button>
+        </div>
+      </form>
+    <br/>
+      <div>
+        <a [routerLink]="['/clientes']" routerLinkActive="router-link-active" (click)="limpiarVariable()">Listado de cliente</a>
+      </div>
+    </div>
+  </div>
+</div>
