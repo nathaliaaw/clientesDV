@@ -15,15 +15,15 @@
         </div>
         <div>
           <label for="">Número documento</label>
-          <input formControlName="numeroDocumento" name="numeroDocumento" type="text" class="form-control">
+          <input formControlName="numeroDocumento" name="numeroDocumento"  [(ngModel)]="numeroDocumento" type="text" class="form-control">
         </div>
         <div>
           <label for="">Nombres completos</label>
-          <input formControlName="completosNombre" name="completosNombre" type="text" class="form-control">
+          <input formControlName="completosNombre" name="completosNombre"  [(ngModel)]="completosNombre"type="text" class="form-control">
         </div>
         <div>
           <label for="">Usuario</label>
-          <input formControlName="usuario" name="usuario" type="text" class="form-control">
+          <input formControlName="usuario" name="usuario" type="text" [(ngModel)]="usuario" class="form-control">
         </div>
         <div>
           <label for="">Contraseña</label>
