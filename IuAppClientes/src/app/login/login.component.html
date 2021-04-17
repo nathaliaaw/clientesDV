@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-md-4 col-md-4 top-login">
+      <div>
+        <h4>
+
+          Login
+        </h4>
+      </div>
+      <form action="" [formGroup]="formLogin">
+
+        <div class="top">
+          <label>Usuario</label>
+          <input type="text" class="form-control" formControlName="usuario" [(ngModel)]="usuario" name="usuario">
+        </div>
+        <div>
+          <label for="">Contraseña</label>
+          <input type="password" class="form-control" formControlName="clave" [(ngModel)]="clave" name="clave">
+        </div>
+        <div class="top">
+          <button class="btn btn-default" (click)="login()"> 
+            ingresar
+          </button>
+        </div>
+      </form>
+    
+      <div>
+        <a [routerLink]="['/registro']" routerLinkActive="router-link-active">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <swal #alertaLogin></swal>  -->
