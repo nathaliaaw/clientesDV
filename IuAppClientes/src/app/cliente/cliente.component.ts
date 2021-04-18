@@ -26,7 +26,7 @@ export class ClienteComponent implements OnInit {
         this.listaClientesD = data
       }, error => {
         console.log(error);
-        // this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
+        this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
       });
   }
   actualizarCliente(item) {

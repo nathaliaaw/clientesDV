@@ -39,43 +39,44 @@ export class CrearClientesComponent implements OnInit {
       });
   }
   registrarProductos() {
-    if (this.formRegistroclientes.invalid)
+    if (this.formRegistroclientes.invalid) {
+      this.servicioGeneral.MostrarModal('Error', ' Por favor ingresar todos los datos', 'error', 'Aceptar')
       return;
-    // this.servicioGeneral.MostrarModal('Error', ' Por favor ingresar todoos los datos', 'error', 'Aceptar')
+   }
 
 
 
-    if (this.servicioGeneral.listaActualizar==[]){
+    if (this.servicioGeneral.listaActualizar.length == 0) {
       const info2 = {
         idProducto: this.idProducto, tipodocumento: this.tipodocumento
         , numeroDocumento: this.numeroDocumento, completosNombre: this.completosNombre
       }
       this.http.post(environment.urlApi + '/insertarClientes', info2).subscribe(
-        (data: Array<any>) => {          
-          // this.servicioGeneral.MostrarModal('Exitoso', 'Se registro correctamente', 'success', 'Aceptar')
+        (data: Array<any>) => {
+          this.servicioGeneral.MostrarModal('Exitoso', 'Se registro correctamente', 'success', 'Aceptar')
 
         }, error => {
           console.log(error);
-          // this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
+          this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
         });
     }
-    else{      
+    else {
       const info2 = {
         idProducto: this.idProducto, tipodocumento: this.tipodocumento
-        , numeroDocumento: this.numeroDocumento, completosNombre: this.completosNombre,idusuario: this.servicioGeneral.listaActualizar.idusuario,
+        , numeroDocumento: this.numeroDocumento, completosNombre: this.completosNombre, idusuario: this.servicioGeneral.listaActualizar.idusuario,
       }
       this.http.post(environment.urlApi + '/actualizaClientes', info2).subscribe(
-        (data: Array<any>) => {          
-          // this.servicioGeneral.MostrarModal('Exitoso', 'Se registro correctamente', 'success', 'Aceptar')
+        (data: Array<any>) => {
+          this.servicioGeneral.MostrarModal('Exitoso', 'Se registro correctamente', 'success', 'Aceptar')
 
         }, error => {
           console.log(error);
-          // this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
+          this.servicioGeneral.MostrarModal('Error', ' Por favor vericar', 'error', 'Aceptar')
         });
     }
   }
-  limpiarVariable(){
-    this.servicioGeneral.listaActualizar=[]
+  limpiarVariable() {
+    this.servicioGeneral.listaActualizar = []
   }
 
 }
